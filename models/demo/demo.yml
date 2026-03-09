@@ -1,6 +1,5 @@
 version: 2
 
-
 models:
   - name: employee
     description: "Employee DBT model"
@@ -16,11 +15,20 @@ models:
                   severity: warn
       - name: emp_salary
         data_tests:
-          - salary_check 
+          - salary_check
+  - name: customer
+    description: "DBT Model for the customer table"  
+  - name: customer_vw
+    description: "DBT Model for the customer view"  
 
 sources:
   - name: employee
     database: DBT_DB
     schema: PUBLIC
-    tables: 
+    tables:
       - name: EMPLOYEE_RAW
+  - name: customer
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: CUSTOMER_SRC
