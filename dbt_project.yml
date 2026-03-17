@@ -37,6 +37,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_practice_project:
+    snowflake_spend:
+      enabled: true
     dbt_demo:
       staging:
         jaffle_shop:
